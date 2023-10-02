@@ -1,4 +1,4 @@
-from rest_framework import status
+from rest_framework import status, views
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 from products.models import Products
@@ -12,7 +12,9 @@ class ProductsViewSet(ModelViewSet):
     def get_queryset(self):
         return self.queryset
 
-    def list(self, request, *args, **kwargs):
+
+class ProductByNameViewSet(views.APIView):
+    def get(self, request, *args, **kwargs):
         product = Products.objects.get(product_name=request.data.get('product_name'))
 
         output = ProductsSerializer(instance=product)
