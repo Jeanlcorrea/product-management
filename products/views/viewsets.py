@@ -17,6 +17,6 @@ class ProductByNameViewSet(views.APIView):
     def get(self, request):
         product = Products.objects.get(product_name=request.data.get('product_name'))
 
-        output = ProductsSerializer(instance=product)
+        output_data = ProductsSerializer(instance=product)
 
-        return Response(data=output.data, status=status.HTTP_200_OK)
+        return Response(data=output_data.data, status=status.HTTP_200_OK)
