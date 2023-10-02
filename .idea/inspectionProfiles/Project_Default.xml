@@ -1,0 +1,178 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyAbstractClassInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="5">
+            <item index="0" class="java.lang.String" itemvalue="django" />
+            <item index="1" class="java.lang.String" itemvalue="djchoices" />
+            <item index="2" class="java.lang.String" itemvalue="rest_framework" />
+            <item index="3" class="java.lang.String" itemvalue="requests" />
+            <item index="4" class="java.lang.String" itemvalue="celery" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E712" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+          <option value="N802" />
+          <option value="N801" />
+          <option value="N803" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="type" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="utils.external_services.bankly.contracts.get_auth_and_set_http_client.assert_called_once_with" />
+          <option value="utils.external_services.bankly.contracts._build_url.assert_called_once_with" />
+          <option value="nix_proxy.billet.contracts.BilletApi.*" />
+          <option value="utils.http_client.post.assert_called_once_with" />
+          <option value="nix_proxy.billet.contracts.settlement_payment.json" />
+          <option value="utils.http_client.HttpClient.*" />
+          <option value="utils.http_client.post.assert_called_once" />
+          <option value="utils.external_services.bankly.contracts.save_log.assert_called_once_with" />
+          <option value="nix_proxy.billet.tests.test_billet_bankly_api.TestSettlementPayment._billet_bankly_api" />
+          <option value="nix_proxy.billet.services.db_get_billet.get_by_authentication_code.assert_called_once" />
+          <option value="nix_proxy.billet.contracts.settlement_payment.return_value" />
+          <option value="nix_proxy.accounts.services.balance.context_load_balance.get_balance.assert_called_once_with" />
+          <option value="utils.repositories_contracts.get_or_raise.return_value" />
+          <option value="utils.date.get_now.assert_called_once" />
+          <option value="utils.contracts.pdf_creator.create_base64.assert_called_once_with" />
+          <option value="utils.repositories_contracts.get_or_raise.assert_called_once_with" />
+          <option value="nix_proxy.webhooks.services.update_status.update_account.update.assert_called_once_with" />
+          <option value="nix_proxy.statement.services.statements_to_pdf.StatementsToPdf.__get_actual_balance" />
+          <option value="str.strftime" />
+          <option value="nix_proxy.statement.services.statements_to_pdf.StatementsToPdf.__get_name_and_document_and_transaction_type" />
+          <option value="nix_proxy.statement.services.statements_to_pdf.StatementsToPdf.__get_formatted_amount" />
+          <option value="nix_proxy.statement.services.statements_to_pdf.StatementsToPdf.__load_balance" />
+          <option value="nix_proxy.statement.services.statements_to_pdf.lines" />
+          <option value="nix_proxy.webhooks.services.sender.billet_webhook_sender.send_billet_wh.assert_called_once_with" />
+          <option value="nix_proxy.billet.services.db_get_billet.get_by_our_number.assert_called_once" />
+          <option value="nix_proxy.billet.services.db_get_billet.get_by_our_number.assert_called_once_with" />
+          <option value="nix_proxy.billet.contracts.update.assert_called_once" />
+          <option value="nix_proxy.billet.contracts.update.assert_called_once_with" />
+          <option value="nix_proxy.webhooks.services.sender.billet_webhook_sender.send_billet_wh.assert_called_once" />
+          <option value="nix_proxy.webhooks.tests.services.receiver.test__process_billet.make_sut.objects" />
+          <option value="nix_proxy.webhooks.tests.services.receiver.test__process_billet.setup.objects" />
+          <option value="nix_proxy.webhooks.services.update_status.update_customer.update.assert_called_once_with" />
+          <option value="nix_proxy.webhooks.services.update_status.update_establishment.update.assert_called_once_with" />
+          <option value="nix_proxy.statement.services.statements_to_csv.StatementsToCsv.__get_rows" />
+          <option value="type.with_ui" />
+          <option value="django.db.models.fields.json.JSONField.__getitem__" />
+          <option value="str.__setitem__" />
+          <option value="nix_proxy.scheduled_events.models.encoded_value.setter" />
+          <option value="tuple.data" />
+          <option value="nix_proxy.billet.services.remote_get_billet.get_by_authentication_code.return_value" />
+          <option value="nix_proxy.billet.services.remote_get_billet.get_by_authentication_code.asser_called_once_with" />
+          <option value="nix_proxy.billet.entities.BilletsEntity.paid_out_date" />
+          <option value="nix_proxy.transfer.service.remote_get_transfer.get_by_authentication_code.body" />
+          <option value="nix_proxy.transfer.service.remote_get_transfer.get_by_authentication_code.return_value" />
+          <option value="nix_proxy.transfer.service.remote_get_transfer.get_by_authentication_code.asssert_called_once" />
+          <option value="dict.assert_called_once_with" />
+          <option value="str.id" />
+          <option value="nix_proxy.establishment.contacts.create_legal_representative.assert_called_once_with" />
+          <option value="nix_proxy.establishment.contacts.create_legal_representative.return_value" />
+          <option value="utils.repositories_contracts.create.assert_called_once" />
+          <option value="utils.repositories_contracts.create.assert_called_once_with" />
+          <option value="nix_proxy.establishment.contacts.create_establishment_owners.assert_called_once" />
+          <option value="nix_proxy.establishment.contacts.create_establishment_owners.assert_called_once_with" />
+          <option value="nix_proxy.establishment.models.EstablishmentOwnersModel.objects" />
+          <option value="nix_proxy.establishment.contacts.get_or_create_establishment_owners.assert_called_once_with" />
+          <option value="nix_proxy.establishment.entities.EstablishmentsEntity.type" />
+          <option value="nix_proxy.establishment.contacts.create_or_update_establishment.assert_called_once_with" />
+          <option value="utils.http_client.put.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_db_getter.get_done_documents_by_account_holder.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_db_getter.get_done_documents_by_establishment_sa_ltda_ts.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_db_getter.get_done_documents_by_establishment_sa_ltda_ts.assert_called_once" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_db_getter.get_account_holder_by_document.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_db_getter.list_documents_unsent_by_account_holder.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.remote_sender.send_sa_ltda_ts_to_bankly.assert_called_once_with" />
+          <option value="utils.file_storage.use_cases.file_storage_downloader.download_b64.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.document_analysis_bankly_api.send_corporation_business_documents.return_value" />
+          <option value="nix_proxy.document_analysis.document_analysis_bankly_api.send_corporation_business_documents.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_updater.update.assert_called_once_with" />
+          <option value="utils.repositories_contracts.filter.assert_called_once_with" />
+          <option value="nix_proxy.document_analysis.service.document_analysis_db_getter.get_done_document_by_account_holder_and_document_type.assert_has_calls" />
+          <option value="django.db.models.fields.DateField.strftime" />
+          <option value="nix_register.payments.models.PaymentsModel.objects" />
+          <option value="nix_register.transaction.models.TransactionModel.objects" />
+          <option value="nix_register.payments.models.PaymentsModel.update" />
+          <option value="nix_register.repass.models.RepassModel.objects" />
+          <option value="nix_register.payments.models.PaymentsModel.get" />
+          <option value="nix_register.payments.models.PaymentsModel.aggregate" />
+          <option value="nix_register.payments.models.PaymentsModel.__getitem__" />
+          <option value="factories.ReceivableFactory" />
+          <option value="rest_framework.authtoken.models.Token.objects" />
+          <option value="nix_register.repass.views.list_repass_view" />
+          <option value="django.db.models.query.QuerySet.qs" />
+          <option value="dict.social_number" />
+          <option value="nix_register.receivable.v2.views.list_receivable_by_id_api_view.ListReceivableByIdAPIView.as_view" />
+          <option value="nix_register.receivable.models.ReceivableModel.objects" />
+          <option value="nix_register.receivable.models.ReceivableModel.get" />
+          <option value="nix_register.receivable.tests.views.v2.test_list_receivable_by_id_api_view.TestListReceivableByIdAPIView.contracts" />
+          <option value="nix_register.receivable.services.db_get_receivable.list_receivable_by_id.assert_called_once" />
+          <option value="nix_register.receivable.contracts.find_by_id.assert_called_once_with" />
+          <option value="utils.abstracts.NixRegisterAPIView.__int__" />
+          <option value="nix_register.receivable.tasks.send_settled_receivable_to_cerc_task.SendSettledReceivableToCercTask.retry" />
+          <option value="nix_register.receivable.models.ReceivableModel.__getitem__" />
+          <option value="nix_register.repass.contracts.find_repass_is_processing_by_id.assert_called_once" />
+          <option value="utils.contracts.repository.bulk_update_or_create.assert_called_once" />
+          <option value="utils.contracts.repository.update_or_create.assert_has_calls" />
+          <option value="nix_register.webhook.services.receiver.process_cerc_webhook.ProcessCercWebhook.execute" />
+          <option value="nix_register.webhook.tests.services.receiver.test_process_cerc_webhook.TestProcessContractEffect._webhook" />
+          <option value="nix_register.webhook.services.receiver.process_cerc_webhook._process_receivable.assert_called_once_with" />
+          <option value="nix_register.webhook.services.receiver.process_cerc_webhook._contract_effect.assert_called_once_with" />
+          <option value="domain.mercantil.send_compromise_from_receivable_use_case.update_compromise_from_receivable.assert_called_once_with" />
+          <option value="domain.mercantil.send_compromise_from_receivable_use_case.send_compromise_from_receivable.assert_called_once_with" />
+          <option value="utils.contracts.repository.get_or_raise.assert_called_once_with" />
+          <option value="nix_register.receivable.api.contracts.create_or_update_receivable.return_value" />
+          <option value="nix_register.receivable.api.contracts.create_or_update_receivable.assert_called_once_with" />
+          <option value="nix_register.webhook.services.receiver.process_contract_effect_webhook.execute.assert_called_once_with" />
+          <option value="nix_register.transaction.views.TransactionsView" />
+          <option value="nix_register.transaction.views.TransactionsDetailView" />
+          <option value="nix_register.transaction.views.TransactionCountView" />
+          <option value="rest_framework.fields.DecimalField.__sub__" />
+          <option value="str.__sub__" />
+          <option value="list.installment" />
+          <option value="list.amount" />
+          <option value="list.payment_date" />
+          <option value="nix_register.transaction.contracts.repositories.IReceivableTransactionRepository.assert_called_once" />
+          <option value="nix_register.transaction.models.ReceivableTransactionModel.__getitem__" />
+          <option value="utils.contracts.repository.update_or_create.assert_called_once_with" />
+          <option value="nix_register.establishments.models.EstablishmentsModel.objects" />
+          <option value="int.__getitem__" />
+          <option value="nix_register.repass.contracts.repositories.find_repass_by_id_list.assert_called_once_with" />
+          <option value="utils.csv.write_string_io.assert_called_once" />
+          <option value="utils.csv.write_string_io.assert_called_once_with" />
+          <option value="tuple.assert_called_once_with" />
+          <option value="nix_register.repass.contracts.repositories.find_repass_is_processing_by_id.assert_called_once_with" />
+          <option value="nix_register.repass.models.RepassModel.payments" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
+      <option name="processCode" value="true" />
+      <option name="processLiterals" value="true" />
+      <option name="processComments" value="true" />
+    </inspection_tool>
+  </profile>
+</component>
