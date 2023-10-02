@@ -14,7 +14,7 @@ class ProductsViewSet(ModelViewSet):
 
 
 class ProductByNameViewSet(views.APIView):
-    def get(self, request, *args, **kwargs):
+    def get(self, request):
         product = Products.objects.get(product_name=request.data.get('product_name'))
 
         output = ProductsSerializer(instance=product)
