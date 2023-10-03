@@ -14,9 +14,14 @@ class ProductsViewSet(ModelViewSet):
 
 
 class ProductByNameViewSet(views.APIView):
+
     def get(self, request):
-        product = Products.objects.get(product_name=request.data.get('product_name'))
+        product_name = request.data.get('product_name')
+        try:
+            product = Products.objects.get(product_name__iexact=product_name)
+            output_data = ProductsSerializer(instance=product)
 
-        output_data = ProductsSerializer(instance=product)
+            return Response(data=output_data.data, status=status.HTTP_200_OK)
 
-        return Response(data=output_data.data, status=status.HTTP_200_OK)
+        except Products.DoesNotExist:
+            return Response({'error': 'Produto não encontrado'}, status=status.HTTP_404_NOT_FOUND)
