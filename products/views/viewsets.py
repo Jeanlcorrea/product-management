@@ -16,9 +16,9 @@ class ProductsViewSet(ModelViewSet):
 class ProductByNameViewSet(views.APIView):
 
     def get(self, request):
-        product_name = request.data.get('product_name')
+        product = request.data.get('product')
         try:
-            product = Products.objects.get(product_name__iexact=product_name)
+            product = Products.objects.get(product_name__iexact=product)
             output_data = ProductsSerializer(instance=product)
 
             return Response(data=output_data.data, status=status.HTTP_200_OK)

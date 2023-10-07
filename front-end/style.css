@@ -121,10 +121,6 @@ tr {
   font-size: 20px;
 }
 
-.trFont{
-  font-size: 30px;
-}
-
 tbody tr td {
   vertical-align: text-top;
   padding: 6px;
