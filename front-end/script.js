@@ -1,42 +1,56 @@
-const modal = document.querySelector('.modal-container')
 const tbody = document.querySelector('tbody')
-const sProduto = document.querySelector('#m-produto')
-const sPreco = document.querySelector('#m-preco')
-const sMarca = document.querySelector('#m-marca')
-const sCategoria = document.querySelector('#m-categoria')
-const btnSalvar = document.querySelector('#btnSalvar')
+var produto = document.getElementById("produtoInput").value = ''
+
 
 let itens
 let id
 
-function openModal(edit = false, index = 0) {
-  modal.classList.add('active')
+function obterProduto() {
 
-  modal.onclick = e => {
-    if (e.target.className.indexOf('modal-container') !== -1) {
-      modal.classList.remove('active')
+  var produto = document.getElementById("produtoInput").value;
+
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+
+        var apiData = JSON.parse(xhr.responseText);
+
+        insertItem(apiData);
+      } else {
+
+        var mensagemDeErro = "Ocorreu um erro na solicitação."; // Mensagem de erro padrão
+
+        try {
+
+          var erroDaAPI = JSON.parse(xhr.responseText);
+          if (erroDaAPI.error) {
+            mensagemDeErro = erroDaAPI.error;
+          }
+        } catch (e) {
+          // Se não for possível analisar a resposta da API, mantenha a mensagem de erro padrão
+        }
+
+        alert(mensagemDeErro); 
+      }
     }
-  }
+  };
 
-  if (edit) {
-    sProduto.value = itens[index].produto
-    sPreco.value = itens[index].preco
-    sMarca.value = itens[index].marca
-    sCategoria.value = itens[index].categoria
-    id = index
-  } else {
-    sProduto.value = ''
-    sPreco.value = ''
-    sMarca.value = ''
-    sCategoria.value = ''
-  }
+  xhr.open("GET", "http://127.0.0.1:8000/productmanagement/" + produto, true);
+
+  xhr.send();
+
+  var produto = document.getElementById("produtoInput").value = ''
+
+  setItensBD()
+
+  modal.classList.remove('active')
+  loadItens()
+  id += 1
 
 }
 
-function editItem(index) {
-
-  openModal(true, index)
-}
 
 function deleteItem(index) {
   itens.splice(index, 1)
@@ -44,14 +58,14 @@ function deleteItem(index) {
   loadItens()
 }
 
-function insertItem(item, index) {
+function insertItem(apiData, index) {
   let tr = document.createElement('tr')
-
+ 
   tr.innerHTML = `
-    <td>${item.produto}</td>
-    <td>R$ ${item.preco}</td>
-    <td>${item.marca}</td>
-    <td>${item.categoria}</td>
+    <td>${apiData.product_name}</td>
+    <td>R$ ${apiData.price}</td>
+    <td>${apiData.brand}</td>
+    <td>${apiData.category}</td>
     <td class="acao">
       <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
     </td>
@@ -60,30 +74,6 @@ function insertItem(item, index) {
     </td>
   `
   tbody.appendChild(tr)
-}
-
-btnSalvar.onclick = e => {
-
-  if (sProduto.value == '' || sPreco.value == '' || sMarca.value == '' || sCategoria == '') {
-    return
-  }
-
-  e.preventDefault();
-
-  if (id !== undefined) {
-    itens[id].produto = sProduto.value
-    itens[id].preco = sPreco.value
-    itens[id].marca = sMarca.value
-    itens[id].categoria = sCategoria.value
-  } else {
-    itens.push({'produto': sProduto.value, 'preco': sPreco.value, 'marca': sMarca.value, 'categoria': sCategoria.value})
-  }
-
-  setItensBD()
-
-  modal.classList.remove('active')
-  loadItens()
-  id = undefined
 }
 
 function loadItens() {
@@ -99,34 +89,3 @@ const getItensBD = () => JSON.parse(localStorage.getItem('dbfunc')) ?? []
 const setItensBD = () => localStorage.setItem('dbfunc', JSON.stringify(itens))
 
 loadItens()
-
-// TESTANDO API
-
-const apiUrl = `http://127.0.0.1:8000`;
-const productName = 'alvejante'
-
-const formData = new FormData();
-formData.append('product_name', productName);
-
-
-const url = `${apiUrl}/productmanagement/product?${formData}`;
-
-fetch(url, {
-  method: 'GET',
-  headers: {
-
-  },
-})
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`Erro na solicitação: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(productData => {
-
-    console.log('Dados do produto:', productData);
-  })
-  .catch(error => {
-    console.error(error);
-  });
